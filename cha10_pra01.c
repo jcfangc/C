@@ -1,19 +1,19 @@
 // 下面的程序框架只显示了函数定义和变量声明。
 
-int a;
+int a; // row1
 
-void f(int b)
+void f(int b) // row3
 {
   int c;
 }
-void g(void)
+void g(void) // row7
 {
   int d;
   {
-    int e;
+    int e; // row11
   }
 }
-int main(void)
+int main(void) // row 14
 {
   int f;
 }
