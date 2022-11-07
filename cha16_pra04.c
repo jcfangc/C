@@ -26,7 +26,7 @@ int main(void)
     return 0;
 }
 
-// 编写名为 make_complex 的函数，此函数用来把两个实际参数（都是 Complex 结构）存储在 Complex 结构中，然后返回此结构。
+// 编写名为 make_complex 的函数，此函数用来把两个实际参数（都是 double 类型）存储在 Complex 结构中，然后返回此结构。
 Complex make_complex(double real, double imaginary)
 {
     Complex sct;
