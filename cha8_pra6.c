@@ -10,8 +10,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-int exp_10(int);
-
 int main(void)
 {
     const int segments[10][7] =
@@ -30,19 +28,19 @@ int main(void)
     int number, digits = 0, temp_0, temp_1;
     int num[10] = { 10,10,10,10,10,10,10,10,10,10 };
 
-    printf("\n\t Enter a number: (less than 10 digits) ");
+    printf("Enter a number: (less than 10 digits) ");
     scanf("%d", &number);
     getchar();
 
     temp_0 = number;
-    
+
     // 确定输入数字是几位数
     for (; number >= 10;) {
         digits++;
         number /= 10;
-        printf("\n\t digit %d and counting...", digits);
+        printf("digit %d and counting...\n", digits);
     }
-    printf("\n\t digit %d and counting...", ++digits);
+    printf("digit %d and counting...\n", ++digits);
 
     number = temp_0;
     temp_1 = digits;
@@ -51,14 +49,14 @@ int main(void)
     for (; digits > 0; digits--) {
         num[digits - 1] = number % 10;
         number /= 10;
-        printf("\n\t %d will be shown later. ", num[digits - 1]);
+        printf("%d will be shown later. \n", num[digits - 1]);
     }
 
     digits = temp_1;
 
     // 开始依次打印
     // 第一行
-    printf("\n\t");
+    printf("\n");
     for (int i = 0; num[i] != 10; i++) {
         if (segments[num[i]][0] != 0) {
             printf(" _ ");
@@ -69,7 +67,7 @@ int main(void)
         printf(" ");
     }
     // 第二行
-    printf("\n\t");
+    printf("\n");
     for (int i = 0; num[i] != 10; i++) {
         // 1号位
         if (segments[num[i]][1] != 0) {
@@ -95,7 +93,7 @@ int main(void)
         printf(" ");
     }
     // 第三行
-    printf("\n\t");
+    printf("\n");
     for (int i = 0; num[i] != 10; i++) {
         // 4号位
         if (segments[num[i]][4] != 0) {
@@ -122,18 +120,5 @@ int main(void)
     }
 
     getchar();
-    printf("\n\n");
     return 0;
-}
-
-int exp_10(int num)
-{
-    int mul_10 = 1;
-    
-    while (num > 0) {
-        mul_10 *= 10;
-        num--;
-    }
-
-    return mul_10;
 }
